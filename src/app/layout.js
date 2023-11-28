@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
+import { ClerkProvider } from '@clerk/nextjs'
 
 export const metadata = {
   title: 'HealthCare',
@@ -9,8 +10,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body className='bg-gray-600'>{children}</body>
     </html>
+    </ClerkProvider>
   )
 }
