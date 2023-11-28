@@ -1,5 +1,9 @@
+
+
 export default function Navbar() {
+   
     return(
+       
         <div className="flex flex-wrap mx-w-screen-xl items-center sticky top-0 justify-between p-4 shadow-md bg-transparent">
         <div className="font-bold text-2xl mx-auto text-gray-100">HealthCare</div>
         
@@ -12,6 +16,7 @@ export default function Navbar() {
          
         </ul>
         </div>
+       
    
 
         
