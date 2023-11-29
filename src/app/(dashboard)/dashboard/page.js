@@ -1,24 +1,23 @@
-import Cta from "./(components)/cta";
-import Footer from "./(components)/footer";
-import Hero from "./(components)/hero";
-import Navbar from "./(components)/navbar";
-
-
-
-
-
-
-export default async function Dashboard(request){
-    const response = await fetch('http://localhost:3000/api/users');
-    return(
-        <div>
-            
-            <Navbar />
-            <Hero />
-            <Cta />
-            <Footer />
-
-
-        </div>
-    )
+export default async function Dashboard() {
+    try {
+        const response = await supabaseClient.from('post').select();
+        if (!response.ok) {
+            throw new Error('Error fetching data from Supabase');
+        } else {
+            const posts = response.data; // Assuming the data property holds the array of posts
+            return (
+                <div>
+                    <h1>Posts</h1>
+                    <ul>
+                        {posts.map((post,index) => (
+                            <li key={index}>{post.post}</li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+    } catch (error) {
+        console.error(error);
+        return <div>Error fetching data</div>;
+    }
 }

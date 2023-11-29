@@ -8,7 +8,7 @@ export default authMiddleware({
 
 
 
-    publicRoutes:['/','sign-in','sign-up','documentation']
+    publicRoutes:['/','sign-in','/sign-up','/documentation','/cart']
 });
  
 export const config = {

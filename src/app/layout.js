@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
     <html lang="en">
-      <body className=''>{children}</body>
+      <body className='bg-zinc-100'>{children}</body>
     </html>
     </ClerkProvider>
   )
